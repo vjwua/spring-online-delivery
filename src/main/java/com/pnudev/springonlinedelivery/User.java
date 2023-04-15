@@ -16,12 +16,11 @@ public class User {
 	public String password;
 	public Role role;
 	
-	User(long id, String first_name, String last_name, String email, String mobile, String password){
+	User(long id, String first_name, String last_name, String email, String mobile){
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.email = email;
 		this.mobile = mobile;
-		this.password = password;
 	}
 }

@@ -16,7 +16,7 @@ public class SpringOnlineDeliveryApplication {
 	}
 
 	@GetMapping(path = "/")
-	public List<User> hello() {
+	public List<User> hello() { //test cases
 		return List.of(
 			new User(1, "Chaim", "Jugu", "sus@gmail.com", "5295"),
 			new User(2, "Andrew", "Igorchenko", "sus@gmail.com", "7386")
