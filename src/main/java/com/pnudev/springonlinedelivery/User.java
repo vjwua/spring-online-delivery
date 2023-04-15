@@ -14,7 +14,7 @@ public class User {
 	public String email;
 	public String mobile;
 	public String password;
-	//public enum role;
+	public Role role;
 	
 	User(long id, String first_name, String last_name, String email, String mobile, String password){
 		this.id = id;
