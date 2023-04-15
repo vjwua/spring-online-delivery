@@ -3,24 +3,30 @@ package com.pnudev.springonlinedelivery;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.Getter;
 
-@Table
+@Table(name = "User")
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 public class User {
 	@Id
 	public long id;
-	public String first_name;
-	public String last_name;
+	@Pattern(regexp = "^[A-Za-z ,.'-]+$")
+	public String firstName;
+	@Pattern(regexp = "^[A-Za-z ,.'-]+$")
+	public String lastName;
+	@Email
 	public String email;
+	@Pattern(regexp = "/^(\\+\\d{1,3}[- ]?)?\\d{10}$/")
 	public String mobile;
 	public String password;
 	public Role role;
-	
-	User(long id, String first_name, String last_name, String email, String mobile){
-		this.id = id;
-		this.first_name = first_name;
-		this.last_name = last_name;
-		this.email = email;
-		this.mobile = mobile;
-	}
 }
