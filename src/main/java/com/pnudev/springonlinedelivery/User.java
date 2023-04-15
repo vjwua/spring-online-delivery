@@ -1,7 +1,10 @@
 package com.pnudev.springonlinedelivery;
 
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
@@ -10,23 +13,26 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.Getter;
 
-@Table(name = "User")
 @Entity
+@Table(name = "User")
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
 public class User {
 	@Id
-	public long id;
+	private long id;
 	@Pattern(regexp = "^[A-Za-z ,.'-]+$")
-	public String firstName;
+	private String firstName;
 	@Pattern(regexp = "^[A-Za-z ,.'-]+$")
-	public String lastName;
+	private String lastName;
 	@Email
-	public String email;
+	private String email;
 	@Pattern(regexp = "/^(\\+\\d{1,3}[- ]?)?\\d{10}$/")
-	public String mobile;
-	public String password;
-	public Role role;
+	private String mobile;
+	private String password;
+	private Role role;
+	
+	@OneToMany(mappedBy="user")
+	private Set<OrderU> orders;
 }

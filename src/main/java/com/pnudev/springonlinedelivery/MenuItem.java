@@ -2,23 +2,27 @@ package com.pnudev.springonlinedelivery;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.Getter;
 
-@Table(name = "MenuItem")
 @Entity
+@Table(name = "MenuItem")
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
 public class MenuItem {
 	@Id
-	public long id;
-	public String name;
-	public String summary;
-	public double size;
-	public double price;
+	private long id;
+	private String name;
+	private String summary;
+	private double size;
+	private double price;
+	
+	@ManyToOne
+	private MenuItemOrder menuItemOrder;	
 }
