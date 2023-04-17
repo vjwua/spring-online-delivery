@@ -14,7 +14,7 @@ import lombok.Setter;
 import lombok.Getter;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
@@ -22,13 +22,13 @@ import lombok.Getter;
 public class User {
 	@Id
 	private long id;
-	@Pattern(regexp = "^[A-Za-z ,.'-]+$")
+	@Pattern(regexp = "^[A-Za-z-]+$")
 	private String firstName;
-	@Pattern(regexp = "^[A-Za-z ,.'-]+$")
+	@Pattern(regexp = "^[A-Za-z-]+$")
 	private String lastName;
 	@Email
 	private String email;
-	@Pattern(regexp = "/^(\\+\\d{1,3}[- ]?)?\\d{10}$/")
+	@Pattern(regexp = "^(\\+\\d{1,3}[- ]?)?\\d{10}$")
 	private String mobile;
 	private String password;
 	private Role role;

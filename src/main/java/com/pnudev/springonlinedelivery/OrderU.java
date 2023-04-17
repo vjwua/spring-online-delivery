@@ -3,6 +3,7 @@ package com.pnudev.springonlinedelivery;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -11,7 +12,7 @@ import lombok.Setter;
 import lombok.Getter;
 
 @Entity
-@Table(name = "OrderU")	
+@Table(name = "orderU")	
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
@@ -27,5 +28,6 @@ public class OrderU {
 	@ManyToOne
 	private User user;
 	@ManyToOne
-	private MenuItemOrder menuItemOrder;	
+	@JoinColumn(name = "menu_item_id", nullable = false)
+	private MenuItem menuItem;	
 }
