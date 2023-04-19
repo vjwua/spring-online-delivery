@@ -1,0 +1,8 @@
+spring:
+    datasource:
+        url: ${DB_HOST_MYSQL}
+        username: ${DB_USERNAME_MYSQL}
+        password: ${DB_PASSWORD_MYSQL}
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+        hibernate.ddl-auto: update
