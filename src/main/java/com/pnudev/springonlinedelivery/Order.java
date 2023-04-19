@@ -12,12 +12,12 @@ import lombok.Setter;
 import lombok.Getter;
 
 @Entity
-@Table(name = "orderU")	
+@Table(name = "'order'")	
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-public class OrderU {
+public class Order {
 	@Id
 	private long id;
 	@Column(name = "user_id", insertable=false, updatable=false)
