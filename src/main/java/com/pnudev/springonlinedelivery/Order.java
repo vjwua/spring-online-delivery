@@ -12,7 +12,7 @@ import lombok.Setter;
 import lombok.Getter;
 
 @Entity
-@Table(name = "'order'")	
+@Table(name = "`order`")	
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
