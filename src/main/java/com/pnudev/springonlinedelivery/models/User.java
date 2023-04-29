@@ -1,4 +1,4 @@
-package com.pnudev.springonlinedelivery;
+package com.pnudev.springonlinedelivery.models;
 
 import java.util.Set;
 

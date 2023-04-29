@@ -1,5 +1,6 @@
-package com.pnudev.springonlinedelivery;
+package com.pnudev.springonlinedelivery.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -11,20 +12,22 @@ import lombok.Setter;
 import lombok.Getter;
 
 @Entity
-@Table(name = "menu_item")
+@Table(name = "`order`")	
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-public class MenuItem {
+public class Order {
 	@Id
 	private long id;
-	private String name;
-	private String summary;
-	private double size;
+	@Column(name = "user_id", insertable=false, updatable=false)
+	private long userId;
 	private double price;
+	private Status status;
 	
 	@ManyToOne
-	@JoinColumn(name = "order_id", nullable = false)
-	private Order order;	
+	private User user;
+	@ManyToOne
+	@JoinColumn(name = "menu_item_id", nullable = false)
+	private MenuItem menuItem;	
 }
