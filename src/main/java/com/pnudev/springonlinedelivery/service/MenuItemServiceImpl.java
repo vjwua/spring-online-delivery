@@ -8,8 +8,10 @@ import java.util.List;
 
 @Service
 public class MenuItemServiceImpl implements MenuItemService {
+
     @Override
     public List<MenuItem> getMenuItems() {
         return Collections.emptyList();
     }
+    // TODO Add implementation of the list of dishes
 }

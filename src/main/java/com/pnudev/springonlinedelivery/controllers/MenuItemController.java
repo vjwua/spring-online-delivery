@@ -13,8 +13,8 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/menu-items")
 public class MenuItemController {
+    private final MenuItemService menuItemService;
 
-    private MenuItemService menuItemService;
     @GetMapping
     public List<MenuItem> getMenuItems() {
         return menuItemService.getMenuItems();

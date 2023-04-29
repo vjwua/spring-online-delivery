@@ -13,8 +13,8 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/orders")
 public class OrderController {
+    private final OrderService orderService;
 
-    private OrderService orderService;
     @GetMapping
     public List<Order> getOrders() {
         return orderService.getOrders();
