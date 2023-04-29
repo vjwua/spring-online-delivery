@@ -7,5 +7,5 @@ import java.util.List;
 
 @Service
 public interface MenuItemService {
-    public List<MenuItem> getMenuItems();
+    List<MenuItem> getMenuItems();
 }

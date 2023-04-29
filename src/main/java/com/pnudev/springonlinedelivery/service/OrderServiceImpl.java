@@ -3,9 +3,13 @@ package com.pnudev.springonlinedelivery.service;
 import com.pnudev.springonlinedelivery.models.Order;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
-public interface OrderService {
-    List<Order> getOrders();
+public class OrderServiceImpl implements OrderService{
+    @Override
+    public List<Order> getOrders() {
+        return Collections.emptyList();
+    }
 }
