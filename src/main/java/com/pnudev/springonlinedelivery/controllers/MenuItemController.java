@@ -2,12 +2,9 @@ package com.pnudev.springonlinedelivery.controllers;
 
 import com.pnudev.springonlinedelivery.dto.MenuItemDto;
 import com.pnudev.springonlinedelivery.dto.MenuItemUpdateDto;
-import com.pnudev.springonlinedelivery.models.MenuItem;
 import com.pnudev.springonlinedelivery.service.MenuItemService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
