@@ -2,9 +2,12 @@ package com.pnudev.springonlinedelivery.controllers;
 
 import com.pnudev.springonlinedelivery.dto.MenuItemDto;
 import com.pnudev.springonlinedelivery.dto.MenuItemUpdateDto;
+import com.pnudev.springonlinedelivery.models.MenuItem;
 import com.pnudev.springonlinedelivery.service.MenuItemService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,17 +35,17 @@ public class MenuItemController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public MenuItemDto postMenuItem(@Valid @RequestBody MenuItemDto menuItemDto) {
-        return menuItemService.postMenuItem(menuItemDto);
+    public MenuItemDto createMenuItem(@Valid @RequestBody MenuItemDto menuItemDto) {
+        return menuItemService.createMenuItem(menuItemDto);
     }
 
     @PutMapping(path = "/{id}")
-    public MenuItemDto putMenuItem(@PathVariable Long id, @RequestBody MenuItemUpdateDto menuItemUpdateDto){
-        return menuItemService.putMenuItem(id, menuItemUpdateDto);
+    public MenuItemDto updateMenuItem(@PathVariable Long id, @RequestBody MenuItemUpdateDto menuItemUpdateDto){
+        return menuItemService.updateMenuItem(id, menuItemUpdateDto);
     }
 
-    @DeleteMapping(path = "/cancel")
-    public void cancelMenuItem(@PathVariable Long id) {
-        menuItemService.cancelMenuItem(id);
+    @DeleteMapping(path = "/{id}")
+    public void deleteMenuItem(@PathVariable Long id) {
+        menuItemService.deleteMenuItem(id);
     }
 }

@@ -29,22 +29,22 @@ public class MenuItemServiceImpl implements MenuItemService {
     }
 
     @Override
-    public MenuItemDto postMenuItem(MenuItemDto menuItemDto) {
+    public MenuItemDto createMenuItem(MenuItemDto menuItemDto) {
         MenuItem menuItem = menuItemMapper.dtoToEntity(menuItemDto);
         MenuItem savedMenuItem = menuItemRepository.save(menuItem);
         return menuItemMapper.entityToDto(savedMenuItem);
     }
 
     @Override
-    public MenuItemDto putMenuItem(Long id, MenuItemUpdateDto menuItemUpdateDto) {
+    public MenuItemDto updateMenuItem(Long id, MenuItemUpdateDto menuItemUpdateDto) {
         MenuItem menuItem = menuItemRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(String.format(MENU_ITEM_MESSAGE, id)));
+                .orElseThrow(() -> new EntityNotFoundException(MENU_ITEM_MESSAGE.formatted(id)));
         menuItemMapper.updateMenuItemFromDto(menuItemUpdateDto, menuItem);
         return menuItemMapper.entityToDto(menuItemRepository.save(menuItem));
     }
 
     @Override
-    public void cancelMenuItem(Long id) {
+    public void deleteMenuItem(Long id) {
         menuItemRepository.deleteById(id);
     }
 
