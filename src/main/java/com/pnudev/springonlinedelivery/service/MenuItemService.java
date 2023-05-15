@@ -1,7 +1,7 @@
 package com.pnudev.springonlinedelivery.service;
 
 import com.pnudev.springonlinedelivery.dto.MenuItemDto;
-import com.pnudev.springonlinedelivery.models.MenuItem;
+import com.pnudev.springonlinedelivery.dto.MenuItemUpdateDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,9 +10,9 @@ import java.util.List;
 public interface MenuItemService {
     List<MenuItemDto> getMenuItems();
 
-    void postMenuItem(MenuItem menuItem);
+    MenuItemDto createMenuItem(MenuItemDto menuItemDto);
 
-    void putMenuItem(MenuItem menuItem);
+    MenuItemDto updateMenuItem(Long id, MenuItemUpdateDto menuItemUpdateDto);
 
-    void cancelMenuItem(MenuItem menuItem);
+    void deleteMenuItem(Long id);
 }
