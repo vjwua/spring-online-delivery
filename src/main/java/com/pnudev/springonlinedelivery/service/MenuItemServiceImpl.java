@@ -1,6 +1,7 @@
 package com.pnudev.springonlinedelivery.service;
 
 import com.pnudev.springonlinedelivery.dto.MenuItemDto;
+import com.pnudev.springonlinedelivery.dto.MenuItemUpdateDto;
 import com.pnudev.springonlinedelivery.mapper.MenuItemMapper;
 import com.pnudev.springonlinedelivery.models.MenuItem;
 import com.pnudev.springonlinedelivery.repos.MenuItemRepository;
@@ -26,17 +27,17 @@ public class MenuItemServiceImpl implements MenuItemService {
     }
 
     @Override
-    public void postMenuItem(MenuItem menuItem) {
-        // TODO TBW
+    public MenuItemUpdateDto postMenuItem(MenuItemDto menuItemDto) {
+        return null;
     }
 
     @Override
-    public void putMenuItem(MenuItem menuItem) {
-        // TODO TBW
+    public MenuItemUpdateDto putMenuItem(Integer id, MenuItemUpdateDto menuItemUpdateDto) {
+        return null;
     }
 
     @Override
-    public void cancelMenuItem(MenuItem menuItem) {
+    public void cancelMenuItem(Integer id) {
         // TODO TBW
     }
 
