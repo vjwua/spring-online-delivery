@@ -10,9 +10,9 @@ import java.util.List;
 public interface MenuItemService {
     List<MenuItemDto> getMenuItems();
 
-    MenuItemUpdateDto postMenuItem(MenuItemDto menuItemDto);
+    MenuItemDto postMenuItem(MenuItemDto menuItemDto);
 
-    MenuItemUpdateDto putMenuItem(Integer id, MenuItemUpdateDto menuItemUpdateDto);
+    MenuItemDto putMenuItem(Long id, MenuItemUpdateDto menuItemUpdateDto);
 
-    void cancelMenuItem(Integer id);
+    void cancelMenuItem(Long id);
 }

@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.awt.*;
 import java.util.List;
 
 @AllArgsConstructor
@@ -33,17 +32,17 @@ public class MenuItemController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public MenuItemUpdateDto postMenuItem(@Valid @RequestBody MenuItemDto menuItemDto) {
+    public MenuItemDto postMenuItem(@Valid @RequestBody MenuItemDto menuItemDto) {
         return menuItemService.postMenuItem(menuItemDto);
     }
 
     @PutMapping(path = "/{id}")
-    public MenuItemUpdateDto putMenuItem(@PathVariable Integer id, @RequestBody MenuItemUpdateDto menuItemUpdateDto){
+    public MenuItemDto putMenuItem(@PathVariable Long id, @RequestBody MenuItemUpdateDto menuItemUpdateDto){
         return menuItemService.putMenuItem(id, menuItemUpdateDto);
     }
 
     @DeleteMapping(path = "/cancel")
-    public void cancelMenuItem(@PathVariable Integer id) {
+    public void cancelMenuItem(@PathVariable Long id) {
         menuItemService.cancelMenuItem(id);
     }
 }
