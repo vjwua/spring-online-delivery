@@ -2,6 +2,7 @@ package com.pnudev.springonlinedelivery.models;
 
 import java.util.Set;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -21,6 +22,7 @@ import lombok.Getter;
 @Getter
 public class User {
 	@Id
+	@Column(name = "user_id")
 	private long id;
 	@Pattern(regexp = "^[A-Za-z-]+$")
 	private String firstName;

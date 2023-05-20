@@ -19,6 +19,7 @@ import lombok.Getter;
 @Getter
 public class Order {
 	@Id
+	@Column(name = "order_id")
 	private long id;
 	@Column(name = "user_id", insertable=false, updatable=false)
 	private long userId;
@@ -28,6 +29,6 @@ public class Order {
 	@ManyToOne
 	private User user;
 	@ManyToOne
-	@JoinColumn(name = "menu_item_id", nullable = false)
+	@JoinColumn(name = "menu_item_id")
 	private MenuItem menuItem;	
 }
