@@ -8,7 +8,6 @@ import lombok.Data;
 @Data
 public class OrderDto {
     private long id;
-    private long userId;
     private double price;
     private Status status;
     private User user;
