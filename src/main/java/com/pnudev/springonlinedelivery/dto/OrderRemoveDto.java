@@ -5,5 +5,6 @@ import lombok.Data;
 
 @Data
 public class OrderRemoveDto {
+    private long id;
     private Status status;
 }
