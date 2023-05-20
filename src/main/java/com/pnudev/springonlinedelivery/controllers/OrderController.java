@@ -1,7 +1,6 @@
 package com.pnudev.springonlinedelivery.controllers;
 
 import com.pnudev.springonlinedelivery.dto.OrderDto;
-import com.pnudev.springonlinedelivery.dto.OrderRemoveDto;
 import com.pnudev.springonlinedelivery.dto.OrderUpdateDto;
 import com.pnudev.springonlinedelivery.service.OrderService;
 import jakarta.validation.Valid;
@@ -40,8 +39,8 @@ public class OrderController {
         return orderService.updateOrder(id, orderUpdateDto);
     }
 
-    @PutMapping(path = "/remove")
-    public void removeOrder(@RequestBody OrderRemoveDto orderRemoveDto) {
-        orderService.removeOrder(orderRemoveDto);
+    @PutMapping(path = "/{id}/cancel")
+    public void cancelOrder(@PathVariable Long id) {
+        orderService.cancelOrder(id);
     }
 }

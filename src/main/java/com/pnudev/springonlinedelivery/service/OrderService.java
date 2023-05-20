@@ -1,7 +1,6 @@
 package com.pnudev.springonlinedelivery.service;
 
 import com.pnudev.springonlinedelivery.dto.OrderDto;
-import com.pnudev.springonlinedelivery.dto.OrderRemoveDto;
 import com.pnudev.springonlinedelivery.dto.OrderUpdateDto;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +14,5 @@ public interface OrderService {
 
     OrderDto updateOrder(Long id, OrderUpdateDto orderUpdateDto);
 
-    void removeOrder(OrderRemoveDto orderRemoveDto);
+    void cancelOrder(Long id);
 }

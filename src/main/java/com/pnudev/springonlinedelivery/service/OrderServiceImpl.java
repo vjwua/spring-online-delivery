@@ -1,10 +1,10 @@
 package com.pnudev.springonlinedelivery.service;
 
 import com.pnudev.springonlinedelivery.dto.OrderDto;
-import com.pnudev.springonlinedelivery.dto.OrderRemoveDto;
 import com.pnudev.springonlinedelivery.dto.OrderUpdateDto;
 import com.pnudev.springonlinedelivery.mapper.OrderMapper;
 import com.pnudev.springonlinedelivery.models.Order;
+import com.pnudev.springonlinedelivery.models.Status;
 import com.pnudev.springonlinedelivery.repos.OrderRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
@@ -45,11 +45,10 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public void removeOrder(OrderRemoveDto orderRemoveDto) {
-        Long id = orderRemoveDto.getId();
+    public void cancelOrder(Long id) {
         Order order = orderRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(ORDER_MESSAGE.formatted(id)));
-        order.setStatus(orderRemoveDto.getStatus());
+        order.setStatus(Status.DONE);
         orderRepository.save(order);
     }
 }
