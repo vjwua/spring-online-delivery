@@ -21,12 +21,11 @@ public class Order {
 	@Id
 	@Column(name = "order_id")
 	private long id;
-	@Column(name = "user_id", insertable=false, updatable=false)
-	private long userId;
 	private double price;
 	private Status status;
 	
 	@ManyToOne
+	@JoinColumn(name = "user_id", insertable=false, updatable=false)
 	private User user;
 	@ManyToOne
 	@JoinColumn(name = "menu_item_id")
