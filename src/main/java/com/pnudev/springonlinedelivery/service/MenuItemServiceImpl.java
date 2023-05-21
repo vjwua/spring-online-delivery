@@ -47,6 +47,4 @@ public class MenuItemServiceImpl implements MenuItemService {
     public void deleteMenuItem(Long id) {
         menuItemRepository.deleteById(id);
     }
-
-    // TODO Add implementation of the list of dishes
 }

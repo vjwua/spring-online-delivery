@@ -1,5 +1,6 @@
 package com.pnudev.springonlinedelivery.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -18,6 +19,7 @@ import lombok.Getter;
 @Getter
 public class MenuItem {
 	@Id
+	@Column(name = "menu_item_id")
 	private long id;
 	private String name;
 	private String summary;
