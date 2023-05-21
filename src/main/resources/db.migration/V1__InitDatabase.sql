@@ -29,12 +29,12 @@ create table `order`
     status       smallint null,
     menu_item_id bigint   null,
     user_id      bigint   null,
-    constraint FK1tcl3hlx58yqfu2a3ffmj1qt2
+    constraint FK_order_menu_item
         foreign key (menu_item_id) references menu_item (menu_item_id),
-    constraint FKcpl0mjoeqhxvgeeeq5piwpd3i
+    constraint FK_order_user
         foreign key (user_id) references user (user_id)
 );
 
 alter table menu_item
-    add constraint FKnr1038p1h6s50o8t9aci1ighb
+    add constraint FK_menu_item_order
         foreign key (order_id) references `order` (order_id);
