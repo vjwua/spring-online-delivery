@@ -1,4 +1,4 @@
-create table menu_item
+create table menu_items
 (
     menu_item_id bigint       not null
         primary key,
@@ -30,11 +30,11 @@ create table `order`
     menu_item_id bigint   null,
     user_id      bigint   null,
     constraint FK_order_menu_item
-        foreign key (menu_item_id) references menu_item (menu_item_id),
+        foreign key (menu_item_id) references menu_items (menu_item_id),
     constraint FK_order_user
         foreign key (user_id) references user (user_id)
 );
 
-alter table menu_item
+alter table menu_items
     add constraint FK_menu_item_order
         foreign key (order_id) references `order` (order_id);

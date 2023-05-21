@@ -2,6 +2,9 @@ server:
     port: 8080
     error:
         include-message: always
+springdoc:
+    swagger-ui:
+        path: /swagger-ui.html
 spring:
     datasource:
         url: ${DB_HOST_MYSQL}
@@ -10,4 +13,6 @@ spring:
         driver-class-name: com.mysql.cj.jdbc.Driver
     flyway.baseline-on-migrate: true
     jpa:
-        hibernate.ddl-auto: validate
+        hibernate.ddl-auto: validate #update
+    main:
+        allow-circular-references: true
