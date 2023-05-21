@@ -1,11 +1,8 @@
 package com.pnudev.springonlinedelivery.service;
 
-import com.pnudev.springonlinedelivery.dto.OrderDto;
-import com.pnudev.springonlinedelivery.dto.OrderUpdateDto;
 import com.pnudev.springonlinedelivery.dto.UserDto;
 import com.pnudev.springonlinedelivery.dto.UserUpdateDto;
 import com.pnudev.springonlinedelivery.mapper.UserMapper;
-import com.pnudev.springonlinedelivery.models.Order;
 import com.pnudev.springonlinedelivery.models.User;
 import com.pnudev.springonlinedelivery.repos.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
